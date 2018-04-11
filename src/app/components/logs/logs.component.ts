@@ -13,6 +13,10 @@ export class LogsComponent implements OnInit {
 
  logs: Log[];
 
+ selectedLog: Log;
+
+ loaded: boolean = false;
+
   constructor(private logService: LogService) { }
 
   ngOnInit() {
@@ -23,6 +27,13 @@ export class LogsComponent implements OnInit {
 
   onSelect(log: Log) {
     this.logService.setFormLog(log);
+    this.selectedLog = log;
+  }
+
+  onDelete(log: Log) {
+    if(confirm('Are you sure')) {
+      this.logService.deleteLog(log);
+    }
   }
 
 }
