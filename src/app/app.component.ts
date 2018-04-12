@@ -10,12 +10,9 @@ import { Subject } from 'rxjs/Subject';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'app';
   myArray= [] = ['a','b','c','z']
-
-    ngOnInit() {
-      var myObservable = new Observable<any>() 
-
-      console.log( of(this.myArray));
+ 
+ 
 }
