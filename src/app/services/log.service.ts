@@ -10,7 +10,7 @@ import { Log } from '../models/Log';
 export class LogService {
   logs: Log[];
 
-  private logSource = new BehaviorSubject<Log>({id: null, text: null, date: null});
+  private logSource = new BehaviorSubject<any>([]);
   selectedLog = this.logSource.asObservable();
 
   // private stateSource = new BehaviorSubject<Boolean>(true); 
